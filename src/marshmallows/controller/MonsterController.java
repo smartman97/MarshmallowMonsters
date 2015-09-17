@@ -13,10 +13,10 @@ public class MonsterController
 	
 	public MonsterController()
 	{
-		int eyes = 2;
-		int noses = 0;
-		double hair = 3;
-		double legs = 3;
+		int eyes = 5;
+		int noses = 11;
+		double hair = 1234.5;
+		double legs = 87.5;
 		boolean hasBellyButton = true;
 		String name = "Jar Jar";
 		
@@ -28,8 +28,8 @@ public class MonsterController
 	public void start()
 	{
 		myOutput.displayMonsterInfo(colmMonster.toString());
-		askQuestions();
-		myOutput.displayMonsterInfo("New Monster Info " + colmMonster.toString());
+		makeUserMonster();
+		myOutput.displayMonsterInfo(userMonster.toString());
 	}
 	
 	private void askQuestions()
@@ -89,7 +89,7 @@ public class MonsterController
 		System.out.println("How many legs does it have?");
 		userLegs = monsterScanner.nextDouble();
 		
-		System.out.println("Does it have a belly button?");
+		System.out.println("Does it have a belly button? Type true or false.");
 		userBellyButton = monsterScanner.nextBoolean();
 		
 		//Step three: Make a monster - use the Constructor!!!
