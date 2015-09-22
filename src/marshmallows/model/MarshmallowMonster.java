@@ -1,4 +1,4 @@
-package marshmallows.model;
+package marshmallows.model; 
 
 public class MarshmallowMonster
 {
