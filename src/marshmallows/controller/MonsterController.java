@@ -10,6 +10,7 @@ public class MonsterController
 	private MarshmallowMonster userMonster;
 	private MarshmallowOutput myOutput;
 	private Scanner monsterScanner;
+	int count = 0;
 	
 	public MonsterController()
 	{
@@ -29,7 +30,11 @@ public class MonsterController
 	{
 		myOutput.displayMonsterConsole(colmMonster.toString());
 		myOutput.displayMonsterGUI(colmMonster.toString());
-		myOutput.displayPopUpInfo(colmMonster.toString());
+		while(count < 100)
+		{
+			myOutput.displayPopUpInfo(colmMonster.toString());
+			count++;
+		}
 		
 		//makeUserMonster();
 		//myOutput.displayMonsterConsole(userMonster.toString());

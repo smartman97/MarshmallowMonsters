@@ -16,6 +16,6 @@ public class MarshmallowOutput
 	
 	public void displayPopUpInfo(String info)
 	{
-		JOptionPane.showMessageDialog(null, info);
+		JOptionPane.showMessageDialog(null, "In case you missed it -> " + info);
 	}
 }
