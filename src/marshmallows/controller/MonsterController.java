@@ -30,7 +30,7 @@ public class MonsterController
 		myOutput.displayMonsterConsole(colmMonster.toString());
 		myOutput.displayMonsterGUI(colmMonster.toString());
 		int count = 0;
-		while(count < 100)
+		while(count < 10)
 		{
 			myOutput.displayPopUpInfo(colmMonster.toString());
 			count++;
