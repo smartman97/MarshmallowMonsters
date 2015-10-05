@@ -119,26 +119,136 @@ public class MonsterController
 		myPopups.showResponse("The monsters name is: " + userName);
 		
 		String Eyes = myPopups.grabAnswer("How many eyes does it have?");
-		int userEyes = Integer.parseInt(Eyes);
-		myPopups.showResponse("It has " + userEyes + " eyes.");
+		int userEyes;
+		
+		while(!isInteger(Eyes))
+		{
+			Eyes = myPopups.grabAnswer("How many eyes does it have?");
+		}
+		
+		if(isInteger(Eyes))
+		{
+			userEyes = Integer.parseInt(Eyes);
+		}
+		else
+		{
+			userEyes = 00;
+		}
 		
 		String Noses = myPopups.grabAnswer("How many Noses does it have?");
-		int userNoses = Integer.parseInt(Noses);
-		myPopups.showResponse("It has " + userNoses + " Noses.");
+		int userNoses;
+		
+		while(!isInteger(Eyes))
+		{
+			Noses = myPopups.grabAnswer("How many Noses does it have?");
+		}
+		
+		if(isInteger(Noses))
+		{
+			userNoses = Integer.parseInt(Noses);
+		}
+		else
+		{
+			userNoses = 00;
+		}
 		
 		String Hair = myPopups.grabAnswer("How much hair does it have?");
-		double userHair = Double.parseDouble(Hair);
-		myPopups.showResponse("It has " + userHair + " hairs.");
+		double userHair;
+		
+		while(!isDouble(Hair))
+		{
+			Hair = myPopups.grabAnswer("How much hair does it have?");
+		}
+		
+		if(isDouble(Hair))
+		{
+			userHair = Double.parseDouble(Hair);
+		}
+		else
+		{
+			userHair = 00;
+		}
 		
 		String Legs = myPopups.grabAnswer("How many legs does it have?");
-		double userLegs = Double.parseDouble(Legs);
-		myPopups.showResponse("It has " + userLegs + " legs.");
+		double userLegs;
 		
-		String bellyButton = myPopups.grabAnswer("Does it have a belly button? Type true or false");
-		boolean userBellyButton = Boolean.parseBoolean(bellyButton);
-		myPopups.showResponse("It is " + userBellyButton + " that it has a belly button.");
+		while(!isDouble(Legs))
+		{
+			Legs = myPopups.grabAnswer("How much hair does it have?");
+		}
 		
+		if(isDouble(Legs))
+		{
+			userLegs = Double.parseDouble(Legs);
+		}
+		else
+		{
+			userLegs = 00;
+		}
 		
+		String bellyButton = myPopups.grabAnswer("Does it have a belly button? Type true or false.");
+		boolean userBellyButton;
 		
+		while(!isBoolean(bellyButton))
+		{
+			bellyButton = myPopups.grabAnswer("Does it have a belly button? Type true or false.");
+		}
+		
+		if(isBoolean(bellyButton))
+		{
+			userBellyButton = Boolean.parseBoolean(bellyButton);
+		}
+		else
+		{
+			userBellyButton = false;
+		}
+	}
+	
+	private boolean isInteger(String input)
+	{
+		boolean isInt = false;
+		
+		try
+		{
+			int temp = Integer.parseInt(input);
+			isInt = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myPopups.showResponse("Not a valid Int.");
+		}
+		return isInt;
+	}
+	
+	private boolean isDouble(String input)
+	{
+		boolean isDouble = false;
+		
+		try
+		{
+			double temp = Double.parseDouble(input);
+			isDouble = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myPopups.showResponse("Not a valid Double.");
+		}
+		return isDouble;
+	}
+	
+	private boolean isBoolean(String input)
+	{
+		boolean isBoolean = false;
+		
+		try
+		{
+			Boolean temp = Boolean.parseBoolean(input);
+			isBoolean = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myPopups.showResponse("Not a valid Boolean.");
+		}
+		return isBoolean;
 	}
 }
